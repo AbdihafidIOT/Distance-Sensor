@@ -1,0 +1,56 @@
+#include <LiquidCrystal.h>
+
+// Your exact LCD pin setup (RS, E, D4, D5, D6, D7)
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+const int trigPin = 9;
+const int echoPin = 8;
+const int buzzer = 7;
+
+long duration;
+int distance;
+
+void setup() {
+  // Pin modes
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(buzzer, OUTPUT);
+
+  // Initialize LCD
+  lcd.begin(16, 2);
+  lcd.clear();
+  lcd.print("Distance Sensor");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop() {
+  // Send ultrasonic pulse
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  // Read echo pulse
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration * 0.034 / 2;  // convert to cm
+
+  // Display distance
+  lcd.setCursor(0, 0);
+  lcd.print("Distance: ");
+  lcd.print(distance);
+  lcd.print(" cm   ");
+
+  // Beep if object is closer than 10 cm
+  if (distance < 10 && distance > 0) {
+    digitalWrite(buzzer, HIGH);
+    delay(100);
+    digitalWrite(buzzer, LOW);
+    delay(100);
+  } else {
+    digitalWrite(buzzer, LOW);
+  }
+
+  delay(300);
+}
