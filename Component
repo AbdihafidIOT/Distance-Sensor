@@ -1,0 +1,8 @@
+| Component                 | Quantity | Notes            |
+| ------------------------- | -------- | ---------------- |
+| Arduino Uno (or Nano)     | 1        | Main board       |
+| HC-SR04 Ultrasonic Sensor | 1        | Distance sensor  |
+| LCD1602 (without I2C)     | 1        | Like your photo  |
+| 10 kΩ Potentiometer       | 1        | For LCD contrast |
+| Active Buzzer             | 1        | Makes the beep   |
+| Jumper Wires + Breadboard | —        | For connections  |
