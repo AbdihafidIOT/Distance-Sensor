@@ -1,0 +1,40 @@
+1 LCD1602 modules
+
+| LCD Pin | Connects To                 
+| ------- | --------------------------- 
+| 1 (VSS) | GND                         
+| 2 (VDD) | 5 V                         
+| 3 (V0)  | Middle pin of potentiometer 
+| 4 (RS)  | 12                          
+| 5 (RW)  | GND                        
+| 6 (E)   | 11                         
+| 11 (D4) | 5                          
+| 12 (D5) | 4                           
+| 13 (D6) | 3                           
+| 14 (D7) | 2                          
+| 15 (A)  | 5 V (or via 220 Ω resistor) 
+| 16 (K)  | GND                        
+
+2 ultrasonic sensory
+
+| HC-SR04 Pin | Arduino Pin |
+| ----------- | ----------- |
+| VCC         | 5 V         |
+| GND         | GND         |
+| TRIG        | 9           |
+| ECHO        | 8           |
+
+3 Potentiometer (for LCD contrast)
+
+| Pot Pin    | Connects To    |
+| ---------- | -------------- |
+| 1 (left)   | GND            |
+| 2 (middle) | LCD pin 3 (V0) |
+| 3 (right)  | 5 V            |
+
+4 Buzzer 
+
+| Buzzer Pin | Arduino Pin |
+| ---------- | ----------- |
+| +          | 7           |
+| –          | GND         |
